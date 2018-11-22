@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
+import cityReducer from './components/CityEntries/cityReducer';
 
 const rootReducer = combineReducers({
-// add reducers
+    weather: cityReducer,
 });
 
 export default rootReducer;
