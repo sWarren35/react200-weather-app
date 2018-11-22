@@ -1,6 +1,6 @@
 import React from 'react';
 import CityEntries from './components/CityEntries';
-import CityInformation from './components/CityInformation';
+import CityWeather from './components/CityWeather';
 import SearchHistory from './components/SearchHistory';
 
 export default class App extends React.Component {
@@ -18,7 +18,7 @@ export default class App extends React.Component {
         </div>
         <div className='row'>
         <div className='col-12 col-md-6 mb-4'>
-            <CityInformation />
+            <CityWeather />
           </div>
           <div className='col-12 col-md-6 mb-4'>
             <SearchHistory />

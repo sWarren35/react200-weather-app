@@ -3,7 +3,8 @@ import CityEntries from './CityEntries';
 
 function mapStoreToProps(store) {
     return {
-      city: store.weather.city
+      city: store.getWeather.city,
+      weatherData: store.getWeather.weatherData
     };
   }
 

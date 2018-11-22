@@ -4,10 +4,10 @@ export function updateCity(city) {
       payload: {city},
     };
   }
-export function updateWeather(city) {
+export function updateWeather(weatherData) {
   return {
     type: 'UPDATE_WEATHER',
-    weather: weather
+    payload: {weatherData}
   };
 }
   

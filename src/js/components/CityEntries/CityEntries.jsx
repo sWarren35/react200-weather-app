@@ -22,13 +22,12 @@ export default class CityEntries extends React.Component {
     dispatch(updateCity(value));
   }
 
-  handleGetWeather(value) {
+  handleGetWeather() {
     const { dispatch } = this.props;
     // dispatch was provided by connect()
     axios
-    .get('http://api.openweathermap.org/data/2.5/weather?q='+{city}+'&APPID=API')
-    .then(response => console.log(response.data))
-    dispatch(updateWeather(value));
+    .get('http://api.openweathermap.org/data/2.5/weather?q='+this.props.city+'&APPID=')
+    .then(response => dispatch(updateWeather(response.data)))
   }
 
   render() {

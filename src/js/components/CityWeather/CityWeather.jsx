@@ -1,11 +1,12 @@
 import React from 'react';
-
-export default class CityInformation extends React.Component {
+export default class CityWeather extends React.Component {
   constructor(props) {
     super(props);
   }
 
   render() {
+    const { weather } = this.props;
+    console.log(weather);
     return (
       <div className='card border-secondary mb-3'>
         <div className='card-header text-white bg-secondary '>City Information</div>

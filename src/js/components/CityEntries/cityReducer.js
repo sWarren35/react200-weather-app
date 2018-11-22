@@ -1,5 +1,6 @@
 const defaultState = {
- city:''
+ city:'',
+ weatherData:{}
   };
   
   export default function CityReducer(state = defaultState, action) {
@@ -14,6 +15,12 @@ const defaultState = {
           ...state,
           // but overwriting the description
           city: payload.city
+        };
+      }
+      case 'UPDATE_WEATHER': {
+        return {
+          ...state,
+          weatherData: payload.weatherData
         };
       }
       default: {
