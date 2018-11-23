@@ -4,7 +4,8 @@ import CityEntries from './CityEntries';
 function mapStoreToProps(store) {
     return {
       city: store.getWeather.city,
-      weatherData: store.getWeather.weatherData
+      weatherData: store.getWeather.weatherData,
+      cityHistory: store.getWeather.cityHistory
     };
   }
 

@@ -3,7 +3,8 @@ import React from 'react';
 
 import {
   updateCity,
-  updateWeather
+  updateWeather,
+  addCityToHistory
 } from './cityActionCreators';
 
 export default class CityEntries extends React.Component {
@@ -23,11 +24,11 @@ export default class CityEntries extends React.Component {
   }
 
   handleGetWeather() {
-    const { dispatch } = this.props;
+    const { dispatch, city } = this.props;
     // dispatch was provided by connect()
     axios
-    .get('http://api.openweathermap.org/data/2.5/weather?q='+this.props.city+'&APPID=')
-    .then(response => dispatch(updateWeather(response.data)))
+    .get('http://api.openweathermap.org/data/2.5/weather?q='+city+'&APPID=b922c13678815c719038485d68554c46')
+    .then(response => dispatch(updateWeather(response.data)), dispatch(addCityToHistory(city)))
   }
 
   render() {
