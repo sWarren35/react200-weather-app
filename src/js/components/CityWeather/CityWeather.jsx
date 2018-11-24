@@ -1,5 +1,9 @@
 import React from 'react';
 
+function convertKToFahrenheit(weatherData){
+  return Math.round(9/5 * (weatherData - 273.15) + 32);
+}
+
 export default class CityWeather extends React.Component {
   constructor(props) {
     super(props);
@@ -17,15 +21,15 @@ export default class CityWeather extends React.Component {
         <div className='row'>
         <div className='col-md-4 text-center'>
         <h5>Tempurature (F)</h5>
-        <h6 className ='text-info'>{weather.main.temp}(F)</h6>
+        <h6 className ='text-info'>{convertKToFahrenheit(weather.main.temp)}(F)</h6>
         </div>
         <div className='col-md-4 text-center'>
         <h5>Low (F)</h5>
-        <h6 className ='text-info'>{weather.main.temp_min}(F)</h6>
+        <h6 className ='text-info'>{convertKToFahrenheit(weather.main.temp_min)}(F)</h6>
         </div>
         <div className='col-md-4 text-center'>
         <h5>High (F)</h5>
-        <h6 className ='text-info'>{weather.main.temp_max}(F)</h6>
+        <h6 className ='text-info'>{convertKToFahrenheit(weather.main.temp_max)}(F)</h6>
         </div>
         </div>
         <div className='row'>

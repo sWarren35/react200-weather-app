@@ -16,7 +16,7 @@ export default class SearchHistory extends React.Component {
         <table className='table table-striped'>
         <tbody>
           {cityHistory.map(historyItem => {
-            return <tr key={historyItem.time}><td>{historyItem.city}</td></tr>
+            return <tr key={historyItem.time}><td>{historyItem.city}</td><td>{historyItem.date}</td><td>{historyItem.time}</td></tr>
           })}
          </tbody>
         </table>
