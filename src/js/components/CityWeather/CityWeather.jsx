@@ -4,7 +4,9 @@ import axios from 'axios';
 function convertKToFahrenheit(weatherData){
   return Math.round(9/5 * (weatherData - 273.15) + 32);
 }
-
+function convertKntsToMph(weatherData) {
+  return Math.round(weatherData * 1.151);
+}
 
 export default class CityWeather extends React.Component {
   constructor(props) {
@@ -24,25 +26,25 @@ render() {
       <div className='col-md-4 text-center'>
       <h6>Tempurature (F)</h6>
       <br/>
-      <h5 className ='text-info'>{convertKToFahrenheit(weather.main.temp)}(F)</h5>
+      <h5 className ='text-info'>{convertKToFahrenheit(weather.main.temp)}F</h5>
       </div>
       <div className='col-md-4 text-center'>
       <h6>Low (F)</h6>
       <br/>
-      <h5 className ='text-info'>{convertKToFahrenheit(weather.main.temp_min)}(F)</h5>
+      <h5 className ='text-info'>{convertKToFahrenheit(weather.main.temp_min)}F</h5>
       </div>
       <div className='col-md-4 text-center'>
       <h6>High (F)</h6>
       <br/>
-      <h5 className ='text-info'>{convertKToFahrenheit(weather.main.temp_max)}(F)</h5>
+      <h5 className ='text-info'>{convertKToFahrenheit(weather.main.temp_max)}F</h5>
       </div>
       </div>
       <div className='row'>
       <div className='col-md-4 text-center'>
       <br/>
-      <h6>Pressure</h6>
+      <h6>Pressure (mb)</h6>
       <br/>
-      <h5 className ='text-info'>{weather.main.pressure}mb</h5>
+      <h5 className ='text-info'>{weather.main.pressure}</h5>
       </div>
       <div className='col-md-4 text-center'>
       <br/>
@@ -52,9 +54,9 @@ render() {
       </div>
       <div className='col-md-4 text-center'>
       <br/>
-      <h6>Wind Speed</h6>
+      <h6>Wind Speed (mph)</h6>
       <br/>
-      <h5 className ='text-info'>{weather.wind.speed}kn</h5>
+      <h5 className ='text-info'>{convertKntsToMph(weather.wind.speed)}mph</h5>
       </div>
       </div>
       </div>
