@@ -9,7 +9,6 @@ const defaultState = {
   cityHistory:[],
 }
 
-  
 export default function CityReducer(state = defaultState, action) {
   const { type, payload } = action;
   var d = new Date();
@@ -30,7 +29,7 @@ export default function CityReducer(state = defaultState, action) {
       sec = '0' + sec;
   }
   const time = hr + ':' + min + ':' + sec;
-  
+
   switch (type) {
     // Here in the case of the update description action 
     case 'UPDATE_CITY': {

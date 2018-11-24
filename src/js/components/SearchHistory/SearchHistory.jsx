@@ -5,21 +5,20 @@ export default class SearchHistory extends React.Component {
     super(props);
   }
 
-  render() {
-    const { cityHistory } = this.props;
-    console.log(cityHistory);
-    return (
-      
-        <div className='card border-secondary mb-3'>
+render() {
+  const { cityHistory } = this.props;
+  console.log(cityHistory);
+  return (
+      <div className='card border-secondary mb-3'>
         <div className='card-header text-white bg-secondary'>Search History</div>
         <div className='card-body'>
-        <table className='table table-striped'>
-        <tbody>
-          {cityHistory.map(historyItem => {
-            return <tr key={historyItem.time}><td>{historyItem.city}</td><td>{historyItem.date}</td><td>{historyItem.time}</td></tr>
-          })}
-         </tbody>
-        </table>
+          <table className='table table-striped'>
+            <tbody>
+              {cityHistory.map(historyItem => {
+                return <tr key={historyItem.time}><td>{historyItem.city}</td><td>{historyItem.date}</td><td>{historyItem.time}</td></tr>
+              })}
+           </tbody>
+          </table>
         </div>
       </div>
 );

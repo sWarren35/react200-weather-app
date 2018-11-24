@@ -1,53 +1,64 @@
 import React from 'react';
+import axios from 'axios';
 
 function convertKToFahrenheit(weatherData){
   return Math.round(9/5 * (weatherData - 273.15) + 32);
 }
+
 
 export default class CityWeather extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  render() {
-   const { weather } = this.props;
-    return (
-      <div className='card border-secondary mb-3'>
-        <div className='card-header text-white bg-secondary'>City Information</div>
-        <div className='card-body'>
-        <h3>{weather.name}</h3>
-        Lat/Long: {weather.coord.lat},{weather.coord.lon}
-        <div className="dropdown-divider"></div>
-        <div className='row'>
-        <div className='col-md-4 text-center'>
-        <h5>Tempurature (F)</h5>
-        <h6 className ='text-info'>{convertKToFahrenheit(weather.main.temp)}(F)</h6>
-        </div>
-        <div className='col-md-4 text-center'>
-        <h5>Low (F)</h5>
-        <h6 className ='text-info'>{convertKToFahrenheit(weather.main.temp_min)}(F)</h6>
-        </div>
-        <div className='col-md-4 text-center'>
-        <h5>High (F)</h5>
-        <h6 className ='text-info'>{convertKToFahrenheit(weather.main.temp_max)}(F)</h6>
-        </div>
-        </div>
-        <div className='row'>
-        <div className='col-md-4 text-center'>
-        <h5>Pressure</h5>
-        <h6 className ='text-info'>{weather.main.pressure}mb</h6>
-        </div>
-        <div className='col-md-4 text-center'>
-        <h5>Humidity</h5>
-        <h6 className ='text-info'>{weather.main.humidity}%</h6>
-        </div>
-        <div className='col-md-4 text-center'>
-        <h5>Wind Speed</h5>
-        <h6 className ='text-info'>{weather.wind.speed}kn</h6>
-        </div>
-        </div>
-        </div>
+render() {
+  const { weather } = this.props;
+  return (
+    <div className='card border-secondary mb-3'>
+      <div className='card-header text-white bg-secondary'>City Information</div>
+      <div className='card-body'>
+      <h3 className= "text-center"><img src={'http://openweathermap.org/img/w/'+weather.weather[0].icon+'.png'}/>{weather.name}</h3>
+      <div className= "text-center">Lat/Long: {weather.coord.lat},{weather.coord.lon}</div>
+      <div className="dropdown-divider"></div>
+      <div className='row'>
+      <div className='col-md-4 text-center'>
+      <h6>Tempurature (F)</h6>
+      <br/>
+      <h5 className ='text-info'>{convertKToFahrenheit(weather.main.temp)}(F)</h5>
       </div>
-);
-}
+      <div className='col-md-4 text-center'>
+      <h6>Low (F)</h6>
+      <br/>
+      <h5 className ='text-info'>{convertKToFahrenheit(weather.main.temp_min)}(F)</h5>
+      </div>
+      <div className='col-md-4 text-center'>
+      <h6>High (F)</h6>
+      <br/>
+      <h5 className ='text-info'>{convertKToFahrenheit(weather.main.temp_max)}(F)</h5>
+      </div>
+      </div>
+      <div className='row'>
+      <div className='col-md-4 text-center'>
+      <br/>
+      <h6>Pressure</h6>
+      <br/>
+      <h5 className ='text-info'>{weather.main.pressure}mb</h5>
+      </div>
+      <div className='col-md-4 text-center'>
+      <br/>
+      <h6>Humidity</h6>
+      <br/>
+      <h5 className ='text-info'>{weather.main.humidity}%</h5>
+      </div>
+      <div className='col-md-4 text-center'>
+      <br/>
+      <h6>Wind Speed</h6>
+      <br/>
+      <h5 className ='text-info'>{weather.wind.speed}kn</h5>
+      </div>
+      </div>
+      </div>
+    </div>
+  );
+ }
 }

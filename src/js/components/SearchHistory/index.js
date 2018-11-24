@@ -6,4 +6,5 @@ function mapStoreToProps(store) {
       cityHistory:store.getWeather.cityHistory
     };
   }
-  export default connect(mapStoreToProps)(SearchHistory);
+
+export default connect(mapStoreToProps)(SearchHistory);
