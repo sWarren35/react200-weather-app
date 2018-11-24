@@ -7,6 +7,7 @@ import {
   addCityToHistory
 } from './cityActionCreators';
 
+
 export default class CityEntries extends React.Component {
   constructor(props) {
     super(props);

@@ -16,3 +16,4 @@ export function addCityToHistory(city) {
     payload: {city}
   };
 }
+

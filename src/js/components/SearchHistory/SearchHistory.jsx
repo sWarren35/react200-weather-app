@@ -14,12 +14,11 @@ export default class SearchHistory extends React.Component {
         <div className='card-header text-white bg-secondary'>Search History</div>
         <div className='card-body'>
         <table className='table table-striped'>
-        <ul className = "list-group">
-      {cityHistory.map(citySearched => {
-        return <li key = {citySearched.city}>{citySearched.city}</li>
-        })
-      }
-    </ul>
+        <tbody>
+          {cityHistory.map(historyItem => {
+            return <tr key={historyItem.time}><td>{historyItem.city}</td></tr>
+          })}
+         </tbody>
         </table>
         </div>
       </div>
