@@ -20,6 +20,7 @@ export default function CityReducer(state = defaultState, action) {
   var min = d.getMinutes();
   var sec = d.getSeconds();
   var date = month + '/' + day + '/' + year;
+  
   if (hr < 10) {
       hr = '0' + hr;
   }
