@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 
 function convertKToFahrenheit(weatherData){
   return Math.round(9/5 * (weatherData - 273.15) + 32);

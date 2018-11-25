@@ -15,7 +15,10 @@ render() {
           <table className='table table-striped'>
             <tbody>
               {cityHistory.map(historyItem => {
-                return <tr key={historyItem.time}><td>{historyItem.city}</td><td>{historyItem.date}</td><td>{historyItem.time}</td></tr>
+                return <tr key={historyItem.time}>
+                          <td>{historyItem.city}</td>
+                          <td><p>{historyItem.date}</p><p>{historyItem.time}</p></td>
+                       </tr>
               })}
            </tbody>
           </table>

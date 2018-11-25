@@ -2,9 +2,10 @@ const defaultState = {
  city:"",
  weatherData:{
    "coord":{"lon":"0","lat":"0"},
-   "weather":[{"icon":""}],
-   "main":{"temp":"", "pressure":"", "humidity":"", "temp_min":"","temp_max":""},
-   "wind":{"speed":""}
+   "weather":[{"icon":"01d"}],
+   "main":{"temp":"255.5", "pressure":"0", "humidity":"0", "temp_min":"255.5","temp_max":"255.5"},
+   "wind":{"speed":"0"},
+   "name":"Please Choose A City ✈️"
   },
   cityHistory:[],
 }
