@@ -26,15 +26,15 @@ handleCityInput(event) {
 handleGetWeather(value) {
   const { dispatch, city } = this.props;
   axios
-  .get('http://api.openweathermap.org/data/2.5/weather?q='+ city +'&APPID=b922c13678815c719038485d68554c46')
+  .get('https://api.openweathermap.org/data/2.5/weather?q='+ city +'&APPID=b922c13678815c719038485d68554c46')
   .then(response => dispatch(updateWeather(response.data)), dispatch(addCityToHistory(city)))
 }
 
 handleCityButtons(btn) {
   const { dispatch } = this.props;
-  const {value} = event.target;
+  const { value } = event.target;
   axios
-  .get('http://api.openweathermap.org/data/2.5/weather?q='+ value +'&APPID=b922c13678815c719038485d68554c46')
+  .get('https://api.openweathermap.org/data/2.5/weather?q='+ value +'&APPID=b922c13678815c719038485d68554c46')
   .then(response => dispatch(updateWeather(response.data)), dispatch(addCityToHistory(value)))
 }
 
