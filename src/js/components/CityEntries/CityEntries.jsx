@@ -30,12 +30,11 @@ handleGetWeather(value) {
   .then(response => dispatch(updateWeather(response.data)), dispatch(addCityToHistory(city)))
 }
 
-handleCityButtons(btn) {
+handleCityButtons(event) {
   const { dispatch } = this.props;
-  const { value } = event.target;
   axios
-  .get('https://api.openweathermap.org/data/2.5/weather?q='+ value +'&APPID=b922c13678815c719038485d68554c46')
-  .then(response => dispatch(updateWeather(response.data)), dispatch(addCityToHistory(value)))
+  .get('https://api.openweathermap.org/data/2.5/weather?q='+ event.target.value +'&APPID=b922c13678815c719038485d68554c46')
+  .then(response => dispatch(updateWeather(response.data)), dispatch(addCityToHistory(event.target.value)))
 }
 
 render() {
