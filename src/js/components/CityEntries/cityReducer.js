@@ -19,8 +19,7 @@ export default function CityReducer(state = defaultState, action) {
   var hr = d.getHours();
   var min = d.getMinutes();
   var sec = d.getSeconds();
-  var date = month + '/' + day + '/' + year;
-  
+  const date = month + '/' + day + '/' + year;
   if (hr < 10) {
       hr = '0' + hr;
   }
@@ -33,13 +32,9 @@ export default function CityReducer(state = defaultState, action) {
   const time = hr + ':' + min + ':' + sec;
 
   switch (type) {
-    // Here in the case of the update description action 
     case 'UPDATE_CITY': {
-      // we'll return an object
       return {
-        // with all the previous state
         ...state,
-        // but overwriting the description
         city: payload.city
       };
     }
@@ -60,9 +55,7 @@ export default function CityReducer(state = defaultState, action) {
           "wind":{"speed":""}
           },
         cityHistory: [
-          // here we have all the previous line items
           ...state.cityHistory,
-          // plus a new object
           { city,time,date }
         ]
       };

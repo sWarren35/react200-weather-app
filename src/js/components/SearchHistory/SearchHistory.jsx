@@ -24,6 +24,6 @@ render() {
           </table>
         </div>
       </div>
-);
-}
+  );
+ }
 }

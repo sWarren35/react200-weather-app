@@ -7,4 +7,4 @@ function mapStoreToProps(store) {
     };
   }
   
-  export default connect(mapStoreToProps)(CityWeather);
+export default connect(mapStoreToProps)(CityWeather);
