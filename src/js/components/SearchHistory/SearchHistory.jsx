@@ -7,7 +7,6 @@ export default class SearchHistory extends React.Component {
 
 render() {
   const { cityHistory } = this.props;
-  console.log(cityHistory);
   return (
       <div className='card border-secondary mb-3'>
         <div className='card-header text-white bg-secondary'>Search History</div>

@@ -38,10 +38,10 @@ export default function CityReducer(state = defaultState, action) {
         city: payload.city
       };
     }
-    case 'UPDATE_WEATHER': {
+    case 'UPDATE_WEATHER_FULFILLED': {
       return {
         ...state,
-        weatherData: payload.weatherData
+        weatherData: payload
       };
     }
     case 'ADD_CITY_TO_HISTORY': {

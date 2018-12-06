@@ -18,7 +18,7 @@ render() {
     <div className='card border-secondary mb-3'>
       <div className='card-header text-white bg-secondary'>City Information</div>
       <div className='card-body'>
-        <h3 className= "text-center"><img src={'https://openweathermap.org/img/w/' +weather.weather[0].icon+ '.png'}/>{weather.name}</h3>
+        <h3 className= "text-center"><img src={'https://openweathermap.org/img/w/' + weather.weather[0].icon+ '.png'}/>{weather.name}</h3>
       <div className= "text-center">Lat/Long: {weather.coord.lat},{weather.coord.lon}</div>
       <div className="dropdown-divider"></div>
       <div className='row'>

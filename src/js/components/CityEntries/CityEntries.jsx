@@ -13,6 +13,8 @@ export default class CityEntries extends React.Component {
     this.handleCityInput = this.handleCityInput.bind(this);
     this.handleGetWeather = this.handleGetWeather.bind(this);
     this.handleCityButtons = this.handleCityButtons.bind(this);
+    this.enterPressed = this.enterPressed.bind(this);
+
 }
   
 handleCityInput(event) {
@@ -21,19 +23,24 @@ handleCityInput(event) {
   dispatch(updateCity(value));
 }
 
-handleGetWeather(value) {
+handleGetWeather(event) {
   const { dispatch, city } = this.props;
-  axios
-  .get('https://api.openweathermap.org/data/2.5/weather?q='+ city +'&APPID=b922c13678815c719038485d68554c46')
-  .then(response => dispatch(updateWeather(response.data)), dispatch(addCityToHistory(city)))
+  dispatch(updateWeather(city)), dispatch(addCityToHistory(city))
 }
 
 handleCityButtons(event) {
   const { dispatch } = this.props;
-  axios
-  .get('https://api.openweathermap.org/data/2.5/weather?q='+ event.target.value +'&APPID=b922c13678815c719038485d68554c46')
-  .then(response => dispatch(updateWeather(response.data)), dispatch(addCityToHistory(event.target.value)))
+  dispatch(updateWeather(event.target.value)), dispatch(addCityToHistory(event.target.value))
 }
+
+enterPressed(event) {
+  var code = event.keyCode || event.which;
+  if (code === 13) {
+    this.handleGetWeather(city);
+    console.log(code);
+  }
+}
+
 
 render() {
   const { city } = this.props;
@@ -47,7 +54,7 @@ render() {
           <button value="Tokyo" type="button" className="btn btn-secondary" onClick={this.handleCityButtons}>Tokyo</button>
         </div>
         <div className='input-group'>
-          <input id="city" value={city} onChange={this.handleCityInput} className='form-control' type='text' placeholder='Enter a City' />
+          <input id="city" value={city} onChange={this.handleCityInput} onKeyPress={this.enterPressed.bind(this)} className='form-control' type='text' placeholder='Enter a City' />
           <span className='input-group-btn'>
             <button className='btn btn-secondary' onClick={this.handleGetWeather}>Go!</button>
           </span>
