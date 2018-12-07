@@ -1,4 +1,3 @@
-import axios from 'axios';
 import React from 'react';
 
 import {
@@ -40,7 +39,6 @@ enterPressed(event) {
     console.log(code);
   }
 }
-
 
 render() {
   const { city } = this.props;
