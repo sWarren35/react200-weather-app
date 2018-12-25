@@ -23,7 +23,7 @@ render() {
       <div className="dropdown-divider"></div>
       <div className='row'>
         <div className='col-md-4 text-center'>
-          <h6>Tempurature (°F)</h6>
+          <h6>Temperature (°F)</h6>
           <br/>
           <h5 className ='text-info'>{convertKToFahrenheit(weather.main.temp)}°F</h5>
         </div>
