@@ -10,6 +10,9 @@ module.exports = () => {
   }, {});
   
   return {
+  plugins: [
+    new webpack.DefinePlugin(envKeys)
+  ],
   context: path.join(__dirname, '/src'),
   
   entry: {
@@ -40,9 +43,6 @@ module.exports = () => {
         loader: 'file?name=[name].[ext]',
       },
     ],
-  },
-  plugins: [
-    new webpack.DefinePlugin(envKeys)
-  ]
+  }
   }
 };
