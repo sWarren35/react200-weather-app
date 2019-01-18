@@ -7,10 +7,9 @@
     "node": "8.12.0"
   },
   "scripts": {
-    "build": "webpack --mode development",
+    "build": "webpack",
     "dev": "concurrently \"webpack -w\" \"nodemon server/index.js\"",
     "start": "npm run build && node server/index.js",
-    "less": "lessc src/css/style.less dist/css/style.css",
     "lint": "eslint .",
     "test": "npm run build && mocha test/.setup.js test/*.spec.js --exit"
   },
@@ -42,7 +41,7 @@
     "redux-promise-middleware": "^5.1.1",
     "request": "^2.88.0",
     "serve-favicon": "^2.0.1",
-    "webpack": "^4.8.3",
+    "webpack": "^4.28.4",
     "webpack-cli": "^3.1.0"
   },
   "devDependencies": {
