@@ -1,11 +1,13 @@
 # react200-weather-app
  
-This is a JavaScript Weather App using data provided by Open-Weather's API. Presentational Components are built in React. State Mangement with Redux. [![CircleCI](https://circleci.com/gh/sWarren35/react200-weather-app.svg?style=svg)](https://circleci.com/gh/sWarren35/react200-weather-app)
+This is a JavaScript Weather App using data provided by Open-Weather's API. Presentational Components are built in React. State Mangement with Redux. 
+[![CircleCI](https://circleci.com/gh/sWarren35/react200-weather-app.svg?style=svg)](https://circleci.com/gh/sWarren35/react200-weather-app)
 
 **To clone this repo:**
 
  ```
  git clone react200-weather-app
+ cd react200-weather-app
  npm install
  npm run start
  
