@@ -1,18 +1,13 @@
 const path = require('path');
 const webpack = require('webpack');
 const dotenv = require('dotenv');
+const env = dotenv.config().parsed;
+const envKeys = Object.keys(env).reduce((prev, next) => {
+  prev[`process.env.${next}`] = JSON.stringify(env[next]);
+  return prev;
+}, {});
 
-module.exports = () => {
-  const env = dotenv.config().parsed;
-  const envKeys = Object.keys(env).reduce((prev, next) => {
-    prev[`process.env.${next}`] = JSON.stringify(env[next]);
-    return prev;
-  }, {});
-  
-  return {
-  plugins: [
-    new webpack.DefinePlugin(envKeys)
-  ],
+module.exports = {
   context: path.join(__dirname, '/src'),
   
   entry: {
@@ -43,6 +38,8 @@ module.exports = () => {
         loader: 'file?name=[name].[ext]',
       },
     ],
+  },
+  plugins: [
+    new webpack.DefinePlugin(envKeys)
+  ]
   }
-  }
-};
