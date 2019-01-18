@@ -15,9 +15,9 @@ module.exports = {
 
   resolve: {
     alias: {
-      react: path.join(__dirname, 'node_modules', 'react')
+      react: path.join(__dirname, 'node_modules', 'react', 'env')
     },
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx'],
   },
 
   module: {
@@ -33,12 +33,9 @@ module.exports = {
       },
     ],
   },
-  node: {
-    fs: "empty"
- },
   plugins: [
     new Dotenv({
-      path: path.resolve(__dirname, './src/.env')
+      path: path.resolve('./src/js/.env')
     }),
   ]
 };
