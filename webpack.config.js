@@ -1,25 +1,33 @@
 const path = require('path');
-const Dotenv = require('dotenv-webpack');
+const webpack = require('webpack');
+const dotenv = require('dotenv');
 
-module.exports = {
+module.exports = () => {
+  const env = dotenv.config().parsed;
+  const envKeys = Object.keys(env).reduce((prev, next) => {
+    prev[`process.env.${next}`] = JSON.stringify(env[next]);
+    return prev;
+  }, {});
+  
+  return {
   context: path.join(__dirname, '/src'),
-
+  
   entry: {
     javascript: './js/index'
   },
-
+  
   output: {
     filename: 'bundle.js',
     path: path.join(__dirname, '/dist'),
   },
-
+  
   resolve: {
     alias: {
       react: path.join(__dirname, 'node_modules', 'react')
     },
     extensions: ['.js', '.jsx'],
   },
-
+  
   module: {
     rules: [
       {
@@ -34,9 +42,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new Dotenv({
-      path: './.env',
-      safe: true
-    }),
+    new webpack.DefinePlugin(envKeys)
   ]
+  }
 };
