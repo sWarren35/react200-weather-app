@@ -4,16 +4,15 @@ import {
   updateCity,
   updateWeather,
   addCityToHistory
-} from './cityActionCreators';
+} from './actions';
 
-export default class CityEntries extends React.Component {
+export default class CitySearchBar extends React.Component {
   constructor(props) {
     super(props);
     this.handleCityInput = this.handleCityInput.bind(this);
     this.handleGetWeather = this.handleGetWeather.bind(this);
     this.handleCityButtons = this.handleCityButtons.bind(this);
     this.enterPressed = this.enterPressed.bind(this);
-
 }
   
 handleCityInput(event) {
@@ -36,7 +35,6 @@ enterPressed(event) {
   var code = event.keyCode || event.which;
   if (code === 13) {
     this.handleGetWeather(city);
-    console.log(code);
   }
 }
 
@@ -59,5 +57,4 @@ render() {
         </div>
       </div>
   );
- }
-}
+}};

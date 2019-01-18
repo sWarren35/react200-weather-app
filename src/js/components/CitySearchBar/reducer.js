@@ -1,5 +1,5 @@
 const defaultState = {
- city:"",
+ city: "",
  weatherData:{
    "coord":{"lon":"0","lat":"0"},
    "weather":[{"icon":"01d"}],
@@ -10,7 +10,7 @@ const defaultState = {
   cityHistory:[],
 }
 
-export default function CityReducer(state = defaultState, action) {
+export default function CitySearchReducer(state = defaultState, action) {
   const { type, payload } = action;
   var d = new Date();
   var month = d.getMonth() + 1;

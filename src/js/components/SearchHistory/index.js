@@ -3,7 +3,7 @@ import SearchHistory from './SearchHistory';
 
 function mapStoreToProps(store) {
     return {
-      cityHistory:store.getWeather.cityHistory
+      cityHistory: store.getWeather.cityHistory
     };
   }
 

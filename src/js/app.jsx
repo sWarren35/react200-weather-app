@@ -1,6 +1,6 @@
 import React from 'react';
-import CityEntries from './components/CityEntries';
-import CityWeather from './components/CityWeather';
+import CitySearchBar from './components/CitySearchBar';
+import WeatherDisplay from './components/WeatherDisplay';
 import SearchHistory from './components/SearchHistory';
 
 export default class App extends React.Component {
@@ -13,12 +13,12 @@ export default class App extends React.Component {
         </div>
         <div className='row mb-3'>
           <div className='col-12 '>
-            <CityEntries />
+            <CitySearchBar />
           </div>
         </div>
         <div className='row'>
         <div className='col-12 col-md-6 mb-4'>
-            <CityWeather />
+            <WeatherDisplay />
           </div>
           <div className='col-12 col-md-6 mb-4'>
             <SearchHistory />

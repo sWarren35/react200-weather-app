@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import CityWeather from './CityWeather';
+import WeatherDisplay from './WeatherDisplay';
 
 function mapStoreToProps(store) {
     return {
@@ -7,4 +7,4 @@ function mapStoreToProps(store) {
     };
   }
   
-export default connect(mapStoreToProps)(CityWeather);
+export default connect(mapStoreToProps)(WeatherDisplay);

@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import cityReducer from './components/CityEntries/cityReducer';
+import citySearchReducer from './components/CitySearchBar/reducer';
 
 const rootReducer = combineReducers({
-    getWeather: cityReducer,
+    getWeather: citySearchReducer,
 });
 
 export default rootReducer;
