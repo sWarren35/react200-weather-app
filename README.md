@@ -14,6 +14,6 @@ This is a JavaScript Weather App using data provided by Open-Weather's API. Pres
  
  ```
  
-**To view this on your browser, please select the following url. (Please allow about 30-40 seconds for the page to load, as this is hosted on Heroku's free service):**
+**To view this on your browser, please select the following url. (Please allow about 30 seconds for the page to load, as this is hosted on Heroku's free service):**
 
  https://weather-app-react200.herokuapp.com/
