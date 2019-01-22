@@ -2,11 +2,12 @@ const path = require('path');
 const Dotenv = require('dotenv-webpack');
 
 module.exports = {
-  context: path.join(__dirname, '/src'),
+mode: 'production',
+context: path.join(__dirname, '/src'),
 
-  entry: {
-    javascript: './js/index'
-  },
+entry: {
+  javascript: './js/index'
+},
 
 output: {
   filename: 'bundle.js',
@@ -35,7 +36,7 @@ module: {
 },
 plugins: [
   new Dotenv({
-    path: path.resolve(__dirname,'.env')
+    path: path.resolve(__dirname,'./.env')
   })
  ]
 };
