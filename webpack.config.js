@@ -36,7 +36,7 @@ module: {
 },
 plugins: [
   new Dotenv({
-    path: path.resolve(__dirname,'./.env')
+    path: path.resolve(__dirname,'.env')
   })
  ]
 };
