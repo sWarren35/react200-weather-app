@@ -9,6 +9,8 @@
   "scripts": {
     "build": "webpack -p",
     "start": "npm run build && node server/index.js",
+    "heroku-postbuild": "webpack -p --config ./webpack.config.js --progress",
+    "start-production": "node server/server.js",
     "lint": "eslint .",
     "test": "npm run build && mocha test/.setup.js test/*.spec.js --exit"
   },

@@ -1,4 +1,5 @@
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
 mode: 'production',
@@ -32,5 +33,10 @@ module: {
     loader: 'file?name=[name].[ext]',
   },
  ],
-}
+},
+plugins: [
+  new Dotenv({
+    path: path.resolve(__dirname,'.env')
+  })
+ ]
 };
