@@ -8,29 +8,34 @@ module.exports = {
     javascript: './js/index'
   },
 
-  output: {
-    filename: 'bundle.js',
-    path: path.join(__dirname, '/dist'),
-  },
+output: {
+  filename: 'bundle.js',
+  path: path.join(__dirname, '/dist'),
+},
 
-  resolve: {
-    alias: {
-      react: path.join(__dirname, 'node_modules', 'react')
-    },
-    extensions: ['.js', '.jsx'],
+resolve: {
+  alias: {
+    react: path.join(__dirname, 'node_modules', 'react')
   },
+  extensions: ['.js', '.jsx'],
+},
 
-  module: {
-    rules: [
-      {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        loaders: ['babel-loader'],
-      },
-      {
-        test: /\.html$/,
-        loader: 'file?name=[name].[ext]',
-      },
-    ],
-  }
+module: {
+  rules: [
+  {
+    test: /\.jsx?$/,
+    exclude: /node_modules/,
+    loaders: ['babel-loader'],
+  },
+  {
+    test: /\.html$/,
+    loader: 'file?name=[name].[ext]',
+  },
+ ],
+},
+plugins: [
+  new Dotenv({
+    path: path.resolve(__dirname,'.env')
+  })
+ ]
 };
